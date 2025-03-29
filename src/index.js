@@ -161,7 +161,7 @@ function onPointerEvent(event){
 
 
 window.addEventListener('click', onPointerEvent, false)
-window.addEventListener('touchstart', onPointerEvent, false)
+renderer.domElement.addEventListener('touchstart', onPointerEvent, false)
 
 // Handle window resize events
 window.addEventListener('resize', function() {
