@@ -64,6 +64,13 @@ loader.load(
         //logo_grp = logoScene.getObjectByName('k_logo_grp');
         logo = logoScene.getObjectByName('logo');
 
+        logoScene.traverse( function( child ) {
+            if ( child.isMesh ) {
+                child.material.roughness = 1.0;
+
+            }
+        })
+
 
 
     }
@@ -85,7 +92,7 @@ function setEverythingWhite(){
     logoScene.getObjectByName("you").material.color.set("#808080");
 
     logoScene.getObjectByName("mind_n_you").material.color.set("#808080");
-    logoScene.getObjectByName("musc_n_nutrition").material.color.set("#808080");
+    logoScene.getObjectByName("muscl_n_nutrition").material.color.set("#808080");
 }
 
 const colors = {
@@ -95,7 +102,7 @@ const colors = {
     you: 0xFFFFFF  // White
 };
 
-window.addEventListener('click', (event) => {
+function onPointerEvent(event){
     // Convert mouse position to normalized device coordinates (-1 to +1)
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -113,33 +120,44 @@ window.addEventListener('click', (event) => {
             setEverythingWhite();
             clickedObject.material.color.set(colors.mind);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.mind);
+            logoScene.getObjectByName("center").material.color.set(colors.mind);
             title.innerHTML = "Mind";
             description.innerHTML = "The most powerful yet delicate tool that, when guided right, unlocks new perspective on life.";
         }
-        if(clickedObject.name === 'muscl'){
+        else if(clickedObject.name === 'muscl'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.muscl);
-            logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.muscl);
+            logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.muscl);
+            logoScene.getObjectByName("center").material.color.set(colors.muscl);
             title.innerHTML = "Muscl";
             description.innerHTML = "Muscle is a soft tissue found in most animals. Muscle cells contain protein filaments of actin and myosin that slide past one another, producing a contraction that changes both the length and the shape of the cell.";
         }
-        if(clickedObject.name === 'nutrition'){
+        else if(clickedObject.name === 'nutrition'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.nutrition);
-            logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.nutrition);
+            logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.nutrition);
+            logoScene.getObjectByName("center").material.color.set(colors.nutrition);
             title.innerHTML = "Nutrition";
             description.innerHTML = "Nutrition is the science that interprets the nutrients and other substances in food in relation to maintenance, growth, reproduction, health and disease of an organism.";
         }
-        if(clickedObject.name === 'you'){
+        else if(clickedObject.name === 'you'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.you);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
+            logoScene.getObjectByName("center").material.color.set(colors.you);
             title.innerHTML = "You";
             description.innerHTML = "You are the one who is reading this right now. You are the most important element of the logo"
         }
-    }
-});
 
+    }
+    else{
+        setEverythingWhite();
+    }
+};
+
+
+window.addEventListener('click', onPointerEvent)
+window.addEventListener('touchstart', onPointerEvent)
 
 // Handle window resize events
 window.addEventListener('resize', function() {
@@ -157,7 +175,7 @@ function animate(time) {
 
     // Rotate the logo if it exists
     if(logo){
-        logo.rotation.y += 0.005;
+        logo.rotation.y += 0.001;
     }
 
     // Render the scene from the perspective of the camera
