@@ -59,13 +59,75 @@ loader.load(
 
         // Get the logo object by name
         //logo_grp = logoScene.getObjectByName('k_logo_grp');
-        logo = logoScene.getObjectByName('MNM_Logo');
+        logo = logoScene.getObjectByName('logo');
 
 
 
     }
 );
 
+
+
+//raycaster 
+
+// Assuming you have a scene, camera, and renderer already set up
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+
+function setEverythingWhite(){
+    logoScene.getObjectByName("mind").material.color.set("#808080");
+    logoScene.getObjectByName("muscl").material.color.set("#808080");
+    logoScene.getObjectByName("nutrition").material.color.set("#808080");
+    logoScene.getObjectByName("you").material.color.set("#808080");
+
+    logoScene.getObjectByName("mind_n_you").material.color.set("#808080");
+    logoScene.getObjectByName("musc_n_nutrition").material.color.set("#808080");
+}
+
+const colors = {
+    mind: 0xFFA500, // Yellowish-Orange
+    muscl: 0x0000FF, // Blue
+    nutrition: 0x008000, // Green
+    you: 0xFFFFFF  // White
+};
+
+window.addEventListener('click', (event) => {
+    // Convert mouse position to normalized device coordinates (-1 to +1)
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Update the raycaster
+    raycaster.setFromCamera(mouse, camera);
+    
+    // Check for intersections
+    const intersects = raycaster.intersectObjects(logoScene.getObjectByName('logo').children);
+
+    if (intersects.length > 0) {
+        const clickedObject = intersects[0].object;
+        
+        if(clickedObject.name === 'mind'){
+            setEverythingWhite();
+            clickedObject.material.color.set(colors.mind);
+            logoScene.getObjectByName("mind_n_you").material.color.set(colors.mind);
+        }
+        if(clickedObject.name === 'muscl'){
+            setEverythingWhite();
+            clickedObject.material.color.set(colors.muscl);
+            logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.muscl);
+        }
+        if(clickedObject.name === 'nutrition'){
+            setEverythingWhite();
+            clickedObject.material.color.set(colors.nutrition);
+            logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.nutrition);
+        }
+        if(clickedObject.name === 'you'){
+            setEverythingWhite();
+            clickedObject.material.color.set(colors.you);
+            logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
+        }
+    }
+});
 
 
 // Handle window resize events
