@@ -104,6 +104,9 @@ const colors = {
 };
 
 function onPointerEvent(event){
+
+    event.preventDefault();
+
     // Convert mouse position to normalized device coordinates (-1 to +1)
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -157,8 +160,8 @@ function onPointerEvent(event){
 };
 
 
-window.addEventListener('click', onPointerEvent)
-window.addEventListener('touchstart', onPointerEvent)
+window.addEventListener('click', onPointerEvent, false)
+window.addEventListener('touchstart', onPointerEvent, false)
 
 // Handle window resize events
 window.addEventListener('resize', function() {
