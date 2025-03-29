@@ -6,6 +6,9 @@ import { RGBELoader } from '../three/RGBELoader.js';
 // Variables to hold the logo scene and logo object
 let logoScene, logo_grp, logo;
 
+const title = document.getElementById("title");
+const description = document.getElementById("description");
+
 // Create a new Three.js scene
 const scene = new THREE.Scene();
 
@@ -110,21 +113,29 @@ window.addEventListener('click', (event) => {
             setEverythingWhite();
             clickedObject.material.color.set(colors.mind);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.mind);
+            title.innerHTML = "Mind";
+            description.innerHTML = "The most powerful yet delicate tool that, when guided right, unlocks new perspective on life.";
         }
         if(clickedObject.name === 'muscl'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.muscl);
             logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.muscl);
+            title.innerHTML = "Muscl";
+            description.innerHTML = "Muscle is a soft tissue found in most animals. Muscle cells contain protein filaments of actin and myosin that slide past one another, producing a contraction that changes both the length and the shape of the cell.";
         }
         if(clickedObject.name === 'nutrition'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.nutrition);
             logoScene.getObjectByName("musc_n_nutrition").material.color.set(colors.nutrition);
+            title.innerHTML = "Nutrition";
+            description.innerHTML = "Nutrition is the science that interprets the nutrients and other substances in food in relation to maintenance, growth, reproduction, health and disease of an organism.";
         }
         if(clickedObject.name === 'you'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.you);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
+            title.innerHTML = "You";
+            description.innerHTML = "You are the one who is reading this right now. You are the most important element of the logo"
         }
     }
 });

@@ -7,3 +7,11 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+
+#info{
+    color:white;
+    position: absolute;
+    bottom: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
