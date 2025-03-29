@@ -1,0 +1,9 @@
+/* filepath: /D:/Upwork/K_Logo/Git/k_logo/style.css */
+body {
+    background: radial-gradient(circle, #020202, #080808);
+}
+
+#threejscanvas {
+    width: 100vw;
+    height: 100vh;
+}
