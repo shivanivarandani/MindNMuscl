@@ -93,6 +93,7 @@ function setEverythingWhite(){
 
     logoScene.getObjectByName("mind_n_you").material.color.set("#808080");
     logoScene.getObjectByName("muscl_n_nutrition").material.color.set("#808080");
+    logoScene.getObjectByName("center").material.color.set("#808080");
 }
 
 const colors = {
