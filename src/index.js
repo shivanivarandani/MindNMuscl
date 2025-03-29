@@ -107,6 +107,8 @@ function onPointerEvent(event){
 
     event.preventDefault();
 
+    title.innerHTML = "Touch Event";
+
     // Convert mouse position to normalized device coordinates (-1 to +1)
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
