@@ -1,6 +1,7 @@
 /* filepath: /D:/Upwork/K_Logo/Git/k_logo/style.css */
 body {
     background: radial-gradient(circle, #2f2f2f, #080808);
+    overflow: hidden;
 }
 
 #threejscanvas {
@@ -14,4 +15,12 @@ body {
     position: absolute;
     bottom: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#title {
+font-size: xx-large;
+}
+
+#description {
+    font-size: medium;
 }

@@ -97,11 +97,22 @@ function setEverythingWhite(){
 }
 
 const colors = {
-    mind: 0xFFA500, // Yellowish-Orange
-    muscl: 0x0000FF, // Blue
-    nutrition: 0x008000, // Green
+    mind: "#efa901", // Yellowish-Orange
+    muscl: "#1693e0", // Blue
+    nutrition: "#029e5e", // Green
     you: 0xFFFFFF  // White
 };
+
+function changeColorGradually(object, targetColor) {
+    const newColor = new THREE.Color(targetColor);
+    
+    function animateColor() {
+        requestAnimationFrame(animateColor);
+        object.material.color.lerp(newColor, 0.05); // Adjust the transition speed
+    }
+    
+    animateColor();
+}
 
 function onPointerEvent(event){
 
@@ -136,7 +147,7 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.mind);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.mind);
             logoScene.getObjectByName("center").material.color.set(colors.mind);
-            title.innerHTML = "Mind";
+            title.innerHTML = "MIND";
             description.innerHTML = "The most powerful yet delicate tool that, when guided right, unlocks new perspective on life.";
         }
         else if(clickedObject.name === 'muscl'){
@@ -144,30 +155,52 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.muscl);
             logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.muscl);
             logoScene.getObjectByName("center").material.color.set(colors.muscl);
-            title.innerHTML = "Muscl";
-            description.innerHTML = "Muscle is a soft tissue found in most animals. Muscle cells contain protein filaments of actin and myosin that slide past one another, producing a contraction that changes both the length and the shape of the cell.";
+            title.innerHTML = "MUSCL";
+            description.innerHTML = "A tangible and formidable tool that unlocks endless possibilities when nurtured and guided.";
         }
         else if(clickedObject.name === 'nutrition'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.nutrition);
             logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.nutrition);
             logoScene.getObjectByName("center").material.color.set(colors.nutrition);
-            title.innerHTML = "Nutrition";
-            description.innerHTML = "Nutrition is the science that interprets the nutrients and other substances in food in relation to maintenance, growth, reproduction, health and disease of an organism.";
+            title.innerHTML = "N (NUTRITION)";
+            description.innerHTML = "The simplest yet most misunderstood element, showing quick improvements when approached correctly.";
         }
         else if(clickedObject.name === 'you'){
             setEverythingWhite();
             clickedObject.material.color.set(colors.you);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
             logoScene.getObjectByName("center").material.color.set(colors.you);
-            title.innerHTML = "You";
-            description.innerHTML = "You are the one who is reading this right now. You are the most important element of the logo"
+            title.innerHTML = "YOU";
+            description.innerHTML = "The unique foundation connecting all elements, symbolising individuality and giving meaning to holistic health.";
+        }
+        else if(clickedObject.name === 'muscl_n_nutrition'){
+            setEverythingWhite();
+            
+            logoScene.getObjectByName("muscl").material.color.set(colors.you);
+            logoScene.getObjectByName("nutrition").material.color.set(colors.you);
+            logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.you);
+            logoScene.getObjectByName("center").material.color.set(colors.you);
+            title.innerHTML = "INFINITY";
+            description.innerHTML = "Represents the lifelong journey of self-care, continuous learning and application unique to each individual."
+        }
+        else if(clickedObject.name === 'mind_n_you'){
+            setEverythingWhite();
+            
+            logoScene.getObjectByName("muscl").material.color.set(colors.you);
+            logoScene.getObjectByName("nutrition").material.color.set(colors.you);
+            logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.you);
+            logoScene.getObjectByName("center").material.color.set(colors.you);
+            logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
+            logoScene.getObjectByName("mind").material.color.set(colors.you);
+            logoScene.getObjectByName("you").material.color.set(colors.you);
+            title.innerHTML = "INTERCONNECTED";
+            description.innerHTML = "Highlights how the aligment of Mind, Nutrition, Muscl, and YOU creates the sustainable growth and lasting impact."
         }
 
     }
     else{
         setEverythingWhite();
-        title.innerHTML = "no object clicked";
     }
 };
 
@@ -178,6 +211,7 @@ function onTouchEvent(event) {
 }
 
 renderer.domElement.addEventListener('click', onPointerEvent);
+renderer.domElement.addEventListener('mousemove', onPointerEvent);
 renderer.domElement.addEventListener('touchstart', onTouchEvent, { passive: false });
 
 
