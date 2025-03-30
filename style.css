@@ -15,6 +15,7 @@ body {
     position: absolute;
     bottom: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
 }
 
 #title {
@@ -23,4 +24,18 @@ font-size: xx-large;
 
 #description {
     font-size: medium;
+}
+
+@media screen and (max-width: 600px) {
+    #info {
+        bottom: 5px;
+    }
+    
+    #title {
+        font-size: x-large;
+    }
+
+    #description {
+        font-size: small;
+    }
 }
