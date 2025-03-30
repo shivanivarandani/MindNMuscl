@@ -105,7 +105,7 @@ const colors = {
 
 function onPointerEvent(event){
 
-    event.preventDefault();
+    //event.preventDefault();
 
     
 
@@ -122,7 +122,6 @@ function onPointerEvent(event){
     if (intersects.length > 0) {
         const clickedObject = intersects[0].object;
 
-        title.innerHTML = clickedObject.name;
         
         if(clickedObject.name === 'mind'){
             setEverythingWhite();
@@ -166,7 +165,7 @@ function onPointerEvent(event){
 
 
 window.addEventListener('click', onPointerEvent, false)
-renderer.domElement.addEventListener('touchstart', onPointerEvent, false)
+renderer.domElement.addEventListener('touchstart', onPointerEvent, {passive: false})
 
 // Handle window resize events
 window.addEventListener('resize', function() {
