@@ -107,7 +107,7 @@ function onPointerEvent(event){
 
     event.preventDefault();
 
-    title.innerHTML = "Touch Event";
+    
 
     // Convert mouse position to normalized device coordinates (-1 to +1)
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -121,6 +121,8 @@ function onPointerEvent(event){
 
     if (intersects.length > 0) {
         const clickedObject = intersects[0].object;
+
+        title.innerHTML = clickedObject.name;
         
         if(clickedObject.name === 'mind'){
             setEverythingWhite();
@@ -158,6 +160,7 @@ function onPointerEvent(event){
     }
     else{
         setEverythingWhite();
+        title.innerHTML = "no object clicked";
     }
 };
 
