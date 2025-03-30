@@ -107,11 +107,19 @@ function onPointerEvent(event){
 
     //event.preventDefault();
 
-    
+    let clientX, clientY;
+    if (event.touches) {
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
 
-    // Convert mouse position to normalized device coordinates (-1 to +1)
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Convert position to normalized device coordinates (-1 to +1)
+    mouse.x = (clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(clientY / window.innerHeight) * 2 + 1;
 
     // Update the raycaster
     raycaster.setFromCamera(mouse, camera);
@@ -163,9 +171,15 @@ function onPointerEvent(event){
     }
 };
 
+function onTouchEvent(event) {
+    if (event.touches.length > 0) {
+        onPointerEvent(event);
+    }
+}
 
-window.addEventListener('click', onPointerEvent, false)
-renderer.domElement.addEventListener('touchstart', onPointerEvent, {passive: false})
+renderer.domElement.addEventListener('click', onPointerEvent);
+renderer.domElement.addEventListener('touchstart', onTouchEvent, { passive: false });
+
 
 // Handle window resize events
 window.addEventListener('resize', function() {
