@@ -1,6 +1,6 @@
 /* filepath: /D:/Upwork/K_Logo/Git/k_logo/style.css */
 body {
-    background: radial-gradient(circle, #2f2f2f, #080808);
+    background: linear-gradient(#ebebeb, #e2faff);
     overflow: hidden;
 }
 
@@ -11,19 +11,32 @@ body {
 
 
 #info{
-    color:white;
+    text-align: center;
     position: absolute;
     bottom: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px;
+    width: 100%;
 }
 
 #title {
 font-size: xx-large;
+color: rgb(4, 102, 53);
 }
 
 #description {
     font-size: medium;
+    color:rgb(0, 0, 0);
+}
+
+#watermark{
+    position: absolute;
+    left: 10%;
+    top:20%;
+    font: 250px'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(167, 167, 167, 0.1);
+    z-index: -2;
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
