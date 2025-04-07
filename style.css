@@ -22,10 +22,11 @@ body {
 #title {
 font-size: xx-large;
 color: rgb(4, 102, 53);
+font-weight: bolder;
 }
 
 #description {
-    font-size: medium;
+    font-size: large;
     color:rgb(0, 0, 0);
 }
 
@@ -33,11 +34,19 @@ color: rgb(4, 102, 53);
     position: absolute;
     left: 10%;
     top:20%;
-    font: 250px'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(167, 167, 167, 0.1);
+    font: 12vw 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     z-index: -2;
     text-align: center;
+    display: flex;
+    font-weight: bolder;
 }
+
+#mind-bg,#n-bg,#muscl-bg{
+
+    color: rgba(48, 67, 51, 0.05);
+}
+
+
 
 @media screen and (max-width: 1000px) {
     #info {

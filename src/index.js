@@ -77,6 +77,15 @@ loader.load(
 );
 
 
+function highlightWatermark(arr){
+
+    arr.forEach(elementId => {
+
+        document.getElementById(elementId).style.color = "rgb(56, 81, 60,0.3)"
+
+        
+    });
+}
 
 //raycaster 
 
@@ -149,6 +158,8 @@ function onPointerEvent(event){
             logoScene.getObjectByName("center").material.color.set(colors.mind);
             title.innerHTML = "MIND";
             description.innerHTML = "The most powerful yet delicate tool that, when guided right, unlocks new perspective on life.";
+
+            highlightWatermark(["mind-bg"])
         }
         else if(clickedObject.name === 'muscl'){
             setEverythingWhite();
@@ -157,6 +168,8 @@ function onPointerEvent(event){
             logoScene.getObjectByName("center").material.color.set(colors.muscl);
             title.innerHTML = "MUSCL";
             description.innerHTML = "A tangible and formidable tool that unlocks endless possibilities when nurtured and guided.";
+
+            highlightWatermark(["muscl-bg"])
         }
         else if(clickedObject.name === 'nutrition'){
             setEverythingWhite();
@@ -165,6 +178,8 @@ function onPointerEvent(event){
             logoScene.getObjectByName("center").material.color.set(colors.nutrition);
             title.innerHTML = "N (NUTRITION)";
             description.innerHTML = "The simplest yet most misunderstood element, showing quick improvements when approached correctly.";
+
+            highlightWatermark(["n-bg"])
         }
         else if(clickedObject.name === 'you'){
             setEverythingWhite();
@@ -173,6 +188,8 @@ function onPointerEvent(event){
             logoScene.getObjectByName("center").material.color.set(colors.you);
             title.innerHTML = "YOU";
             description.innerHTML = "The unique foundation connecting all elements, symbolising individuality and giving meaning to holistic health.";
+
+            highlightWatermark(["mind-bg","muscl-bg","n-bg"])
         }
         else if(clickedObject.name === 'muscl_n_nutrition'){
             setEverythingWhite();
@@ -183,6 +200,8 @@ function onPointerEvent(event){
             logoScene.getObjectByName("center").material.color.set(colors.you);
             title.innerHTML = "INFINITY";
             description.innerHTML = "Represents the lifelong journey of self-care, continuous learning and application unique to each individual."
+
+            highlightWatermark(["mind-bg","muscl-bg","n-bg"])
         }
         else if(clickedObject.name === 'mind_n_you'){
             setEverythingWhite();
@@ -196,11 +215,17 @@ function onPointerEvent(event){
             logoScene.getObjectByName("you").material.color.set(colors.you);
             title.innerHTML = "INTERCONNECTED";
             description.innerHTML = "Highlights how the aligment of Mind, Nutrition, Muscl, and YOU creates the sustainable growth and lasting impact."
+
+            highlightWatermark(["mind-bg","muscl-bg","n-bg"])
         }
 
     }
     else{
         setEverythingWhite();
+
+        document.getElementById("mind-bg").style.color = "rgba(48, 67, 51, 0.05)"
+        document.getElementById("muscl-bg").style.color = "rgba(48, 67, 51, 0.05)"
+        document.getElementById("n-bg").style.color = "rgba(48, 67, 51, 0.05)"
     }
 };
 
