@@ -26,9 +26,9 @@ renderer.setSize( container.clientWidth, container.clientHeight );
 const controls = new OrbitControls( camera, renderer.domElement );
 
 // Set the initial position of the camera
-camera.position.x = 0.1;
+camera.position.x = 0;
 camera.position.y = 0;
-camera.position.z = 0.1;
+camera.position.z = 0.15;
 
 // Enable damping (inertia) for the controls
 controls.enableDamping = true;
@@ -256,7 +256,7 @@ function animate(time) {
 
     // Rotate the logo if it exists
     if(logo){
-        logo.rotation.y += 0.001;
+        logo.rotation.z += 0.001;
     }
 
     // Render the scene from the perspective of the camera

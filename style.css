@@ -46,7 +46,14 @@ font-weight: bolder;
     color: rgba(48, 67, 51, 0.05);
 }
 
-
+.instrument-sans {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
 
 @media screen and (max-width: 1000px) {
     #info {
@@ -61,3 +68,4 @@ font-weight: bolder;
         font-size: small;
     }
 }
+
