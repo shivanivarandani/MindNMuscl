@@ -156,7 +156,7 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.mind);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.mind);
             logoScene.getObjectByName("center").material.color.set(colors.mind);
-            title.innerHTML = "MIND";
+            title.innerHTML = "Mind";
             description.innerHTML = "The most powerful yet delicate tool that, when guided right, unlocks new perspective on life.";
 
             highlightWatermark(["mind-bg"])
@@ -166,7 +166,7 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.muscl);
             logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.muscl);
             logoScene.getObjectByName("center").material.color.set(colors.muscl);
-            title.innerHTML = "MUSCL";
+            title.innerHTML = "Muscl";
             description.innerHTML = "A tangible and formidable tool that unlocks endless possibilities when nurtured and guided.";
 
             highlightWatermark(["muscl-bg"])
@@ -176,7 +176,7 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.nutrition);
             logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.nutrition);
             logoScene.getObjectByName("center").material.color.set(colors.nutrition);
-            title.innerHTML = "N (NUTRITION)";
+            title.innerHTML = "N (Nutrition)";
             description.innerHTML = "The simplest yet most misunderstood element, showing quick improvements when approached correctly.";
 
             highlightWatermark(["n-bg"])
@@ -186,7 +186,7 @@ function onPointerEvent(event){
             clickedObject.material.color.set(colors.you);
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
             logoScene.getObjectByName("center").material.color.set(colors.you);
-            title.innerHTML = "YOU";
+            title.innerHTML = "You";
             description.innerHTML = "The unique foundation connecting all elements, symbolising individuality and giving meaning to holistic health.";
 
             highlightWatermark(["mind-bg","muscl-bg","n-bg"])
@@ -198,7 +198,7 @@ function onPointerEvent(event){
             logoScene.getObjectByName("nutrition").material.color.set(colors.you);
             logoScene.getObjectByName("muscl_n_nutrition").material.color.set(colors.you);
             logoScene.getObjectByName("center").material.color.set(colors.you);
-            title.innerHTML = "INFINITY";
+            title.innerHTML = "Infinity";
             description.innerHTML = "Represents the lifelong journey of self-care, continuous learning and application unique to each individual."
 
             highlightWatermark(["mind-bg","muscl-bg","n-bg"])
@@ -213,7 +213,7 @@ function onPointerEvent(event){
             logoScene.getObjectByName("mind_n_you").material.color.set(colors.you);
             logoScene.getObjectByName("mind").material.color.set(colors.you);
             logoScene.getObjectByName("you").material.color.set(colors.you);
-            title.innerHTML = "INTERCONNECTED";
+            title.innerHTML = "Interconnected";
             description.innerHTML = "Highlights how the aligment of Mind, Nutrition, Muscl, and YOU creates the sustainable growth and lasting impact."
 
             highlightWatermark(["mind-bg","muscl-bg","n-bg"])
