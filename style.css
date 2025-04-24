@@ -38,7 +38,7 @@ font-weight:600;
     z-index: -2;
     text-align: center;
     display: flex;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 #mind-bg,#n-bg,#muscl-bg{
