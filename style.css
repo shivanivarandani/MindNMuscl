@@ -22,7 +22,7 @@ body {
 #title {
 font-size: xx-large;
 color: rgb(4, 102, 53);
-font-weight: bolder;
+font-weight:600;
 }
 
 #description {
