@@ -35,7 +35,7 @@ font-weight:600;
 #watermark{
     position: absolute;
     left: 10%;
-    top:15%;
+    top:11%;
     z-index: -2;
     text-align: center;
     display: flex;
