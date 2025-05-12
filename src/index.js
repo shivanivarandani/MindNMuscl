@@ -106,10 +106,10 @@ function setEverythingWhite(){
 }
 
 const colors = {
-    mind: "#efa901", // Yellowish-Orange
-    muscl: "#1693e0", // Blue
-    nutrition: "#029e5e", // Green
-    you: 0xFFFFFF  // White
+    mind: "#10b6ff", // Yellowish-Orange
+    muscl: "#00b295", // Blue
+    nutrition: "#00b295", // Green
+    you:"#10b6ff"  // White
 };
 
 function changeColorGradually(object, targetColor) {
