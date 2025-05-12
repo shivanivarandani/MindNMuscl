@@ -13,10 +13,12 @@ body {
 #info{
     text-align: center;
     position: absolute;
-    bottom: 50px;
+    bottom: 75px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #title {
@@ -33,12 +35,17 @@ font-weight:600;
 #watermark{
     position: absolute;
     left: 10%;
-    top:20%;
-    font: 12vw 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    top:15%;
     z-index: -2;
     text-align: center;
     display: flex;
-    font-weight: 500;
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12vw;
+    font-variation-settings:
+      "wdth" 100;
 }
 
 #mind-bg,#n-bg,#muscl-bg{
