@@ -27,8 +27,10 @@ const controls = new OrbitControls( camera, renderer.domElement );
 
 // Set the initial position of the camera
 camera.position.x = 0;
-camera.position.y = 0;
+camera.position.y = -0.004;
 camera.position.z = 0.15;
+
+controls.target = new THREE.Vector3(0, -0.014, -0.35)
 
 // Enable damping (inertia) for the controls
 controls.enableDamping = true;
@@ -262,6 +264,11 @@ function animate(time) {
 
     // Render the scene from the perspective of the camera
     renderer.render( scene, camera );
+    console.log("position")
+    console.log(camera.position)
+    var currLookAt = (new THREE.Vector3( 0, 0, -0.5 )).applyQuaternion( camera.quaternion ).add( camera.position ); //get lookat vector, 0.5 is distance from camera
+    console.log("lookat")
+    console.log(currLookAt)
 }
 
 // Start the animation loop
