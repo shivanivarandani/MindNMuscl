@@ -67,7 +67,7 @@ loader.load(
         logoScene.traverse( function( child ) {
             if ( child.isMesh ) {
                 child.material.roughness = 1.0;
-                child.material.color.set("#ffffff");
+                child.material.color.set(new THREE.Color().setRGB( 1, 1, 1 ));
 
             }
         })
