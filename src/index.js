@@ -67,7 +67,7 @@ loader.load(
         logoScene.traverse( function( child ) {
             if ( child.isMesh ) {
                 child.material.roughness = 1.0;
-                child.material.color.set(new THREE.Color().setRGB( 1, 1, 1 ));
+                child.material.color.set(new THREE.Color().setRGB( 0.92,1,0.97 ));
 
             }
         })
@@ -96,14 +96,14 @@ const mouse = new THREE.Vector2();
 
 
 function setEverythingWhite(){
-    logoScene.getObjectByName("mind").material.color.set("#808080");
-    logoScene.getObjectByName("muscl").material.color.set("#808080");
-    logoScene.getObjectByName("nutrition").material.color.set("#808080");
-    logoScene.getObjectByName("you").material.color.set("#808080");
+    logoScene.getObjectByName("mind").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
+    logoScene.getObjectByName("muscl").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
+    logoScene.getObjectByName("nutrition").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
+    logoScene.getObjectByName("you").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
 
-    logoScene.getObjectByName("mind_n_you").material.color.set("#808080");
-    logoScene.getObjectByName("muscl_n_nutrition").material.color.set("#808080");
-    logoScene.getObjectByName("center").material.color.set("#808080");
+    logoScene.getObjectByName("mind_n_you").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
+    logoScene.getObjectByName("muscl_n_nutrition").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
+    logoScene.getObjectByName("center").material.color.set((new THREE.Color().setRGB( 0.92,1,0.97 )));
 }
 
 const colors = {
